@@ -12,7 +12,7 @@ ______________________________________________________
 7-everybody	| script that adds execution permission to the owner, the group owner and the other users, to the file hello
 8-James_Bond	|script that sets the permission to the file hello Owner: no permission at all Group: no permission at all Other users: all 	the permissions
 12-directory_permissions| a script that creates a directory called my_dir with permissions 751 in the working directory.
-		|
+103-Star_Wars	| a script that will play the StarWars IV episode in the terminal.
 		|
 		|
 		|
