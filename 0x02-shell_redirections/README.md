@@ -28,6 +28,10 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	script that displays the content of /etc/passwd and /etc/hosts
 4-lastlines
 	Display the last 10 lines of /etc/passwd
+11-directories
+	 a script that counts the number of directories and sub-directories in the current directory.
+	The current and parent directories should not be taken into account
+	Hidden directories should be counted
 12-newest_files
 	a script that displays the 10 newest files in the current directory.
 	Requirements:
@@ -45,8 +49,3 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	 a script that reverse its input.
 8-cwd_state
 	script that writes into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it 		should be overwritten. If the file ls_cwd_content does not exist, create it.
-11-directories
-	Script that counts the number of directories and sub-directories in the current directory.
-	The current and parent directories should not be taken into account
-	Hidden directories should be counted
-
