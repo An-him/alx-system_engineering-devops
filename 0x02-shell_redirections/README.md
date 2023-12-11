@@ -43,4 +43,5 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	 a script that removes all letters c and C from input.
 21-reverse 
 	 a script that reverse its input.
-
+8-cwd_state
+	script that writes into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it 		should be overwritten. If the file ls_cwd_content does not exist, create it.
