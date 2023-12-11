@@ -33,3 +33,6 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	Requirements:
 	One file per line
 	Sorted from the newest to the oldest
+14-findthatword
+	Display lines containing the pattern “root” from the file /etc/passwd
+	
