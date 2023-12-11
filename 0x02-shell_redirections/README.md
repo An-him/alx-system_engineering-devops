@@ -28,6 +28,8 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	script that displays the content of /etc/passwd and /etc/hosts
 4-lastlines
 	Display the last 10 lines of /etc/passwd
+9-duplicate_last_line
+	 script that duplicates the last line of the file iacta
 11-directories
 	 a script that counts the number of directories and sub-directories in the current directory.
 	The current and parent directories should not be taken into account
