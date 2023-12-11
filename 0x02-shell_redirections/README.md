@@ -28,5 +28,8 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	script that displays the content of /etc/passwd and /etc/hosts
 4-lastlines
 	Display the last 10 lines of /etc/passwd
-
-
+12-newest_files
+	a script that displays the 10 newest files in the current directory.
+	Requirements:
+	One file per line
+	Sorted from the newest to the oldest
