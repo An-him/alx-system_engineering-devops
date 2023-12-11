@@ -38,4 +38,7 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 15-countthatword
 	Display the number of lines that contain the pattern “bin” in the file /etc/passwd
 17-hidethisword
-	Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.	
+	Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
+20-hiago
+	 a script that removes all letters c and C from input.
+
