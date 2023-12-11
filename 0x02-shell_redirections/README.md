@@ -41,4 +41,6 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
 20-hiago
 	 a script that removes all letters c and C from input.
+21-reverse 
+	 a script that reverse its input.
 
