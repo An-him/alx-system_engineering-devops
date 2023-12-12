@@ -11,6 +11,7 @@
 6-create_local_variables
 	a script that creates a new local variable.
 7-create_global_variable
+	a script that creates a new global_variables.
 8-true_knowledge
 9-divide_and_rule
 10-love_exponent_breath
