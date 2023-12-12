@@ -18,6 +18,7 @@
 9-divide_and_rule
 	 script that prints the result of POWER divided by DIVIDE, followed by a new line.
 10-love_exponent_breath
+	 a script that displays the result of BREATH to the power LOVE
 11-binary_to_decimal
 12-combinations
 13-print_float
