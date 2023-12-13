@@ -1,4 +1,4 @@
-0x03. Shell, init files, variables and expansions
+	0x03. Shell, init files, variables and expansions
 0-alias:
 	script that creates an alias
 1-hello_you
@@ -23,6 +23,7 @@
 11-binary_to_decimal
 	a script that converts a number from base 2 to base 10.
 12-combinations
+	 a script that prints all possible combinations of two letters, except oo.
 13-print_float
 	a script that prints a number with two decimal places, followed by a new line.
 100-decimal_to_hexadecimal
