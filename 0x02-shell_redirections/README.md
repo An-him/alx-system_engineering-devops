@@ -28,6 +28,11 @@ SCRIPTS AND MEANING/DESCRIPTIONS
 	script that displays the content of /etc/passwd and /etc/hosts
 4-lastlines
 	Display the last 10 lines of /etc/passwd
+6-third_line
+	a script that displays the third line of the file iacta not using sed
+7-file
+	shell script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
+
 9-duplicate_last_line
 	 script that duplicates the last line of the file iacta
 11-directories
