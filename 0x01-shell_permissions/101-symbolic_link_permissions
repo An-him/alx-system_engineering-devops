@@ -1,2 +1,2 @@
 #!/bin/bash
-su | chown -RH vincent _hello
+chown vincent _hello
