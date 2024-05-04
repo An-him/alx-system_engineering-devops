@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# reports PID of process
 echo $$
