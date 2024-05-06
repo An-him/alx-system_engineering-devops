@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#script uses Until printing "Best School" x10
+
+word="Best School"
+i="0"
+
+until [ $i -gt 9 ]
+do
+    echo "$word"
+    ((i++))
+done
