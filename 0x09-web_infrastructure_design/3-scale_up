@@ -1,0 +1,40 @@
+Additional Load Balancer (HAProxy):
+
+Purpose: Provides redundancy for the load balancer, ensuring high availability. If one load balancer fails, the other can take over.
+Configuration: Set up in an active-active cluster, where both load balancers actively manage traffic. This increases the reliability and load distribution efficiency.
+
+Dedicated Web Servers (Nginx):
+Purpose: Handle HTTP requests, serve static content, and forward dynamic content requests to the application servers.
+Reason for Splitting: Isolating the web server improves performance and manageability, allowing for independent scaling and maintenance.
+Dedicated Application Servers:
+
+Purpose: Execute the application logic, process dynamic requests, and interact with the database.
+Reason for Splitting: Separating the application layer ensures better performance and easier management of application updates without affecting the web server.
+Dedicated Database Servers (MySQL):
+
+Purpose: Store and manage data, with one primary server handling writes and a replica handling reads.
+Reason for Splitting: Isolating the database layer improves performance, security, and manageability, enabling dedicated resources for data storage and retrieval.
+Additional Element Explanations
+Active-Active Load Balancer Setup:
+
+Both load balancers actively manage and distribute incoming traffic. This setup improves fault tolerance and load handling.
+Difference between Active-Active and Active-Passive: In an active-passive setup, only one load balancer is active, while the other is on standby, ready to take over if the active one fails. Active-active allows both to work simultaneously, providing better load distribution and redundancy.
+Database Primary-Replica (Master-Slave) Cluster:
+
+The primary node handles all write operations and replicates data to the replica node.
+The replica node handles read operations to offload the primary node, improving performance and availability.
+Difference between Primary and Replica Nodes:
+
+Primary Node (Master): Handles both read and write operations, is the main point for data consistency.
+Replica Node (Slave): Handles read operations, receives data updates from the primary node, providing load balancing for read-heavy operations.
+Issues with This Infrastructure
+Single Points of Failure (SPOF):
+
+Database Primary Node: If the primary database server fails, write operations cannot be performed until a replica is promoted.
+Security Issues:
+
+No Firewall: Without firewalls, the infrastructure is vulnerable to unauthorized access and cyber attacks.
+No HTTPS: Traffic between users and the servers is not encrypted, exposing data to potential interception and tampering.
+No Monitoring:
+
+Lack of Monitoring: Without monitoring, there is no way to track performance, detect issues proactively, or analyze logs for troubleshooting. This can lead to undetected failures and degraded performance without timely alerts.

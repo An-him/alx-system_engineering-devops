@@ -1,0 +1,41 @@
+User Request: A user wants to access the website www.foobar.com
+
+Domain Name: The domain name "foobar.com" is configured with a 'www' CNAME (Canonical Name) record that points to the server's IP address 8.8.8.8.
+
+DNS Resolution: The user's browser queries the DNS server to resolve www.foobar.com to 8.8.8.8.
+
+HTTP Request: The user's browser sends an HTTP request to 8.8.8.8 (the server).
+
+Nginx (Web Server): Nginx receives the HTTP request. Nginx is responsible for handling incoming requests, serving static files, and proxying requests to the application server.
+
+Application Server: The application server (e.g., Gunicorn if using a Python web framework like Django or Flask) processes the request. It runs the application code.
+
+Application Files (Code Base): The application server interacts with the code base to generate dynamic content based on the request.
+
+MySQL (Database): If the request requires data storage or retrieval, the application server interacts with the MySQL database to fetch or store data.
+
+Response: The application server sends the response back to Nginx, which then sends it back to the user's browser.
+
+
+Server: A physical or virtual machine that provides resources and services to run applications, store data, and process requests.
+
+Domain Name: A human-readable address (foobar.com) that maps to the IP address of the server (8.8.8.8), making it easier to access the website.
+
+DNS Record: The 'www' in www.foobar.com is typically a CNAME record, which maps an alias (www) to the canonical domain name (foobar.com).
+
+Web Server: Nginx manages incoming HTTP requests, serves static files, and proxies requests to the application server.
+
+Application Server: Processes the business logic of the application, executing the code to generate dynamic content.
+
+Database: MySQL stores, retrieves, and manages data required by the application.
+
+Communication: The server communicates with the user's computer via the HTTP/HTTPS protocols over the internet.
+
+Issues with This Infrastructure
+
+Single Point of Failure (SPOF): If the server fails, the entire website becomes unavailable.
+
+Downtime During Maintenance: Deploying new code or restarting the web server results in downtime, making the website temporarily unavailable.
+
+Scalability: The infrastructure cannot handle high traffic effectively. Once the server's capacity is exceeded, performance degrades, and the website may become unresponsive.
+

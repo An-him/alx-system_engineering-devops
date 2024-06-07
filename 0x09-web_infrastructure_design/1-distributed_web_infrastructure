@@ -1,0 +1,39 @@
+Load Balancer (HAProxy):
+
+Purpose: Distributes incoming traffic evenly across the web servers to ensure load distribution and high availability.
+Distribution Algorithm: Configured with a round-robin algorithm, which forwards each new request to the next server in line, ensuring an even distribution of load.
+Web Server (Nginx):
+
+Purpose: Handles incoming HTTP requests, serves static content, and forwards dynamic content requests to the application server.
+Application Server:
+
+Purpose: Processes the business logic, executes the application code, and interacts with the database for data operations.
+Database (MySQL):
+
+Purpose: Stores and retrieves data required by the application, ensuring data persistence and integrity.
+Distribution Algorithm
+Round-Robin: This algorithm distributes requests sequentially to each server in the pool. For example, the first request goes to Server 1, the second to Server 2, and so on, then it cycles back to Server 1. This ensures an even load distribution.
+Active-Active vs. Active-Passive Setup
+Active-Active: All servers are actively serving traffic simultaneously. If one server fails, the others continue to handle the load, providing high availability and load balancing.
+Active-Passive: Only one server is actively serving traffic while the other(s) are on standby. If the active server fails, a passive server takes over.
+In this design, the load balancer enables an Active-Active setup as both web servers handle traffic simultaneously.
+
+Primary-Replica (Master-Slave) Database Cluster
+Primary Node (Master): Handles all write operations and propagates changes to the replica nodes.
+Replica Node (Slave): Receives data updates from the primary node and serves read operations to distribute the load.
+Difference between Primary and Replica Nodes:
+
+Primary Node: Handles both read and write operations.
+Replica Node: Handles only read operations, offloading read queries from the primary node to improve performance and availability.
+Issues with This Infrastructure
+Single Points of Failure (SPOF):
+
+Load Balancer: If the load balancer fails, the entire website becomes unavailable.
+Database Primary Node: If the primary node fails, no write operations can be performed until a replica node is promoted to primary.
+Security Issues:
+
+No Firewall: Without firewalls, the infrastructure is vulnerable to unauthorized access and various cyber attacks.
+No HTTPS: Traffic between the user and the servers is not encrypted, posing a risk of data interception and tampering.
+No Monitoring:
+
+Without monitoring, there is no way to track performance, detect issues proactively, or analyze logs for troubleshooting. This can lead to undetected failures and degraded performance without timely alerts.

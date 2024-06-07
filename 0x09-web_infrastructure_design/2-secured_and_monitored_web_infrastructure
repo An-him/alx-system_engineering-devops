@@ -1,0 +1,67 @@
+Firewalls:
+
+Firewall 1: Protects the entire infrastructure from external threats.
+Firewall 2, 3, 4: Protect individual servers within the internal network, adding an extra layer of security.
+Load Balancer:
+
+Distributes incoming traffic evenly across the web servers.
+Terminates SSL, decrypting incoming HTTPS traffic before passing it to the web servers.
+Web Servers (Nginx):
+
+Serve static content.
+Proxy requests to the application servers.
+Application Servers:
+
+Handle the business logic and dynamic content generation.
+Communicate with the database servers for data operations.
+Database (MySQL):
+
+Master/Slave configuration: One master server for write operations and slave servers for read operations.
+Ensures high availability and load distribution for database queries.
+SSL Certificate:
+
+Ensures that traffic between the user's browser and the load balancer is encrypted, providing data integrity and security.
+
+Monitoring Clients:
+
+Installed on each server to collect performance metrics and log data.
+Send collected data to a centralized monitoring service like Sumologic for analysis and alerting.
+Additional Element Explanations
+Firewalls:
+
+Protect servers from unauthorized access and various types of cyber attacks.
+HTTPS (SSL/TLS):
+
+Encrypts data in transit, ensuring privacy and integrity of the data exchanged between the user and the server.
+Monitoring:
+
+Collects data on server performance, availability, and security.
+Helps in proactive issue detection, capacity planning, and troubleshooting.
+Monitoring Tool Data Collection:
+
+Monitoring clients collect data on CPU usage, memory usage, disk I/O, network traffic, application logs, etc.
+Data is sent to a centralized monitoring service for analysis, visualization, and alerting.
+Monitoring Web Server QPS
+Install monitoring clients on the web servers.
+Configure the clients to collect specific metrics related to HTTP requests (QPS - Queries Per Second).
+Send the data to a centralized monitoring service (e.g., Sumologic).
+Set up dashboards and alerts within the monitoring service to track QPS and notify you of any anomalies.
+Issues with This Infrastructure
+SSL Termination at Load Balancer:
+
+Decrypting SSL at the load balancer exposes the traffic to potential interception within the internal network.
+Internal communication between load balancer and servers is unencrypted unless additional measures are taken.
+Single Write-capable MySQL Server:
+
+The master database server is a single point of failure for write operations.
+If the master server fails, no write operations can be performed until it is restored or a new master is promoted.
+Homogeneous Server Components:
+
+Each server having web server, application server, and database components can lead to resource contention.
+Difficult to scale individual components independently, leading to inefficiencies in resource utilization.
+Increases complexity in managing and maintaining each server.
+
+
+
+
+
