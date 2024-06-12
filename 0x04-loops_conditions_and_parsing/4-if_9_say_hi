@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# script prints text=> Best School 10 times and @ 9 iter print Hi & newline
+
+i="0"
+
+while [ $i -lt 10 ]
+do
+echo "Best School"
+((i++))
+if [ "$i" == "9" ]; then
+echo "Hi"
+fi
+
+done
