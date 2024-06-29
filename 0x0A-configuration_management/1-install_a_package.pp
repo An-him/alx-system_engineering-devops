@@ -1,5 +1,5 @@
 # installs flask through pip install
-exec { 'install_flask':
+exec { 'flask_installer':
 command => 'pip3 install flask==2.1.0',
-path    => '/usr/bin',
+path => '/usr/bin/',
 }
