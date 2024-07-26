@@ -2,4 +2,4 @@
 # This script prints the user passed as an argument
 
 
-id -un "$1"
+sudo -u "$1" whoami
