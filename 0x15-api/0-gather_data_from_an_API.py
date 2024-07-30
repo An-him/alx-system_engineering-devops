@@ -4,18 +4,19 @@ import sys
 
 def fetch_employee_todo_progress(employee_id):
     # Fetch employee details
+
+
     employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     employee_response = requests.get(employee_url)
     if employee_response.status_code != 200:
         print(f"Error: Could not retrieve employee data for ID {employee_id}")
         return
-
+    
     employee_data = employee_response.json()
     employee_name = employee_data.get("name")
 
     # Fetch employee's TODO list
-    todos_url = f"""https://jsonplaceholder.typicode.com/todos?userId
-={employee_id}"""
+    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
     todos_response = requests.get(todos_url)
     if todos_response.status_code != 200:
         print(f"Error: Could not retrieve TODO list for employee ID {employee_id}")
@@ -45,4 +46,3 @@ if __name__ == "__main__":
         sys.exit(1)
     
     fetch_employee_todo_progress(employee_id)
-
