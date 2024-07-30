@@ -1,39 +1,34 @@
-
-
+#!/usr/bin/python3
+""" a Python script that, using this REST API"""
 import json
 import requests
-
-
-def fetch_user_data():
-    """Fetch user information and to-do lists for all employees."""
-    # Base URL for the JSONPlaceholder API
-    url = "https://jsonplaceholder.typicode.com/"
-
-    # Fetch the list of all users (employees)
-    users = requests.get(url + "users").json()
-
-    # Create a dictionary containing to-do list information of all employees
-    data_to_export = {}
-    for user in users:
-        user_id = user["id"]
-        user_url = url + f"todos?userId={user_id}"
-        todo_list = requests.get(user_url).json()
-
-        data_to_export[user_id] = [
-            {
-                "task": todo.get("title"),
-                "completed": todo.get("completed"),
-                "username": user.get("username"),
-            }
-            for todo in todo_list
-        ]
-
-    return data_to_export
+from sys import argv
 
 
 if __name__ == "__main__":
-    data_to_export = fetch_user_data()
+    employee_url = 'https://jsonplaceholder.typicode.com/users'
+    todos_url = 'https://jsonplaceholder.typicode.com/todos'
+    obj_dict = {}
+    employee_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    # Write the data to a JSON file
-    with open("todo_all_employees.json", "w") as jsonfile:
-        json.dump(data_to_export, jsonfile, indent=4)
+    for employee_id in employee_ids:
+        response = requests.get(employee_url, params={"id": employee_id})
+        employee_res = response.json()
+        username = employee_res[0].get('username')
+
+        response = requests.get(todos_url, params={"userId": employee_id})
+        employee_todos = response.json()
+        obj_list = []
+
+        for i in employee_todos:
+            title = f'{i.get("title")}'
+            status = i.get("completed")
+            obj = {"username": username, "task": title, "completed": status}
+            obj_list.append(obj)
+
+        obj_dict[employee_id] = obj_list
+
+    # convert to json
+    filename = 'todo_all_employees.json'
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(obj_dict, f)
